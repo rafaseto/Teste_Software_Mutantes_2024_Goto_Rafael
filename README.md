@@ -529,10 +529,12 @@ Figura 34 – Resultados da execução 2 dos testes de mutação nos arquivos de
 Fonte: Autor
 ```
 Link para o repositório no GitHub:
+```
 https://github.com/rafaseto/Teste_Software_Mutantes_2024_Goto_Rafael
+```
 
 Link para o vídeo tutorial:
-https://drive.google.com/file/d/1c2VrOFnHKoVNJPQoporD07G2AZu8S-
-CU/view?usp=sharing
-
+```
+https://drive.google.com/file/d/1c2VrOFnHKoVNJPQoporD07G2AZu8S-CU/view?usp=sharing
+```
 
