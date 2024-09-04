@@ -39,6 +39,8 @@ Code”.
 ```
 Figura 2 – Obtenção da URL do projeto copiado
 ```
+![image](https://github.com/user-attachments/assets/908d8da5-138f-4c8d-bcd9-2538277f0b20)
+
 ```
 Fonte: Autor
 ```
