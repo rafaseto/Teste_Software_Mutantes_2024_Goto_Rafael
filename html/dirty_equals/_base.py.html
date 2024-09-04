@@ -1,0 +1,144 @@
+<html><body><h1>dirty_equals/_base.py</h1>Killed 45 out of 58 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 242</h3><pre>--- dirty_equals/_base.py
++++ dirty_equals/_base.py
+@@ -41,7 +41,7 @@
+         return self.__name__
+ 
+ 
+-T = TypeVar('T')
++T = TypeVar('XXTXX')
+ 
+ 
+ class DirtyEquals(Generic[T], metaclass=DirtyEqualsMeta):
+</pre><h3>Mutant 244</h3><pre>--- dirty_equals/_base.py
++++ dirty_equals/_base.py
+@@ -49,7 +49,7 @@
+     Base type for all *dirty-equals* types.
+     """
+ 
+-    __slots__ = '_other', '_was_equal', '_repr_args', '_repr_kwargs'
++    __slots__ = 'XX_otherXX', '_was_equal', '_repr_args', '_repr_kwargs'
+ 
+     def __init__(self, *repr_args: Any, **repr_kwargs: Any):
+         """
+</pre><h3>Mutant 245</h3><pre>--- dirty_equals/_base.py
++++ dirty_equals/_base.py
+@@ -49,7 +49,7 @@
+     Base type for all *dirty-equals* types.
+     """
+ 
+-    __slots__ = '_other', '_was_equal', '_repr_args', '_repr_kwargs'
++    __slots__ = '_other', 'XX_was_equalXX', '_repr_args', '_repr_kwargs'
+ 
+     def __init__(self, *repr_args: Any, **repr_kwargs: Any):
+         """
+</pre><h3>Mutant 246</h3><pre>--- dirty_equals/_base.py
++++ dirty_equals/_base.py
+@@ -49,7 +49,7 @@
+     Base type for all *dirty-equals* types.
+     """
+ 
+-    __slots__ = '_other', '_was_equal', '_repr_args', '_repr_kwargs'
++    __slots__ = '_other', '_was_equal', 'XX_repr_argsXX', '_repr_kwargs'
+ 
+     def __init__(self, *repr_args: Any, **repr_kwargs: Any):
+         """
+</pre><h3>Mutant 247</h3><pre>--- dirty_equals/_base.py
++++ dirty_equals/_base.py
+@@ -49,7 +49,7 @@
+     Base type for all *dirty-equals* types.
+     """
+ 
+-    __slots__ = '_other', '_was_equal', '_repr_args', '_repr_kwargs'
++    __slots__ = '_other', '_was_equal', '_repr_args', 'XX_repr_kwargsXX'
+ 
+     def __init__(self, *repr_args: Any, **repr_kwargs: Any):
+         """
+</pre><h3>Mutant 249</h3><pre>--- dirty_equals/_base.py
++++ dirty_equals/_base.py
+@@ -57,7 +57,7 @@
+             *repr_args: unnamed args to be used in `__repr__`
+             **repr_kwargs: named args to be used in `__repr__`
+         """
+-        self._other: Any = None
++        self._other: Any = ""
+         self._was_equal: Optional[bool] = None
+         self._repr_args: Iterable[Any] = repr_args
+         self._repr_kwargs: Dict[str, Any] = repr_kwargs
+</pre><h3>Mutant 250</h3><pre>--- dirty_equals/_base.py
++++ dirty_equals/_base.py
+@@ -58,7 +58,7 @@
+             **repr_kwargs: named args to be used in `__repr__`
+         """
+         self._other: Any = None
+-        self._was_equal: Optional[bool] = None
++        self._was_equal: Optional[bool] = ""
+         self._repr_args: Iterable[Any] = repr_args
+         self._repr_kwargs: Dict[str, Any] = repr_kwargs
+ 
+</pre><h3>Mutant 254</h3><pre>--- dirty_equals/_base.py
++++ dirty_equals/_base.py
+@@ -92,7 +92,7 @@
+         if self._was_equal:
+             return self._other
+         else:
+-            raise AttributeError('value is not available until __eq__ has been called')
++            raise AttributeError('XXvalue is not available until __eq__ has been calledXX')
+ 
+     def __eq__(self, other: Any) -> bool:
+         self._other = other
+</pre><h3>Mutant 258</h3><pre>--- dirty_equals/_base.py
++++ dirty_equals/_base.py
+@@ -99,7 +99,7 @@
+         try:
+             self._was_equal = self.equals(other)
+         except (TypeError, ValueError):
+-            self._was_equal = False
++            self._was_equal = None
+ 
+         return self._was_equal
+ 
+</pre><h3>Mutant 259</h3><pre>--- dirty_equals/_base.py
++++ dirty_equals/_base.py
+@@ -105,7 +105,7 @@
+ 
+     def __ne__(self, other: Any) -> bool:
+         # We don't set _was_equal to avoid strange errors in pytest
+-        self._other = other
++        self._other = None
+         try:
+             return not self.equals(other)
+         except (TypeError, ValueError):
+</pre><h3>Mutant 275</h3><pre>--- dirty_equals/_base.py
++++ dirty_equals/_base.py
+@@ -154,7 +154,7 @@
+     )
+ 
+ 
+-InstanceOrType: 'TypeAlias' = 'Union[DirtyEquals[Any], DirtyEqualsMeta]'
++InstanceOrType: 'XXTypeAliasXX' = 'Union[DirtyEquals[Any], DirtyEqualsMeta]'
+ 
+ 
+ class DirtyOr(DirtyEquals[Any]):
+</pre><h3>Mutant 276</h3><pre>--- dirty_equals/_base.py
++++ dirty_equals/_base.py
+@@ -154,7 +154,7 @@
+     )
+ 
+ 
+-InstanceOrType: 'TypeAlias' = 'Union[DirtyEquals[Any], DirtyEqualsMeta]'
++InstanceOrType: 'TypeAlias' = 'XXUnion[DirtyEquals[Any], DirtyEqualsMeta]XX'
+ 
+ 
+ class DirtyOr(DirtyEquals[Any]):
+</pre><h3>Mutant 277</h3><pre>--- dirty_equals/_base.py
++++ dirty_equals/_base.py
+@@ -154,7 +154,7 @@
+     )
+ 
+ 
+-InstanceOrType: 'TypeAlias' = 'Union[DirtyEquals[Any], DirtyEqualsMeta]'
++InstanceOrType: 'TypeAlias' = None
+ 
+ 
+ class DirtyOr(DirtyEquals[Any]):
+</pre></body></html>

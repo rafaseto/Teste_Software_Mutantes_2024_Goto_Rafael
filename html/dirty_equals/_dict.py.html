@@ -1,0 +1,98 @@
+<html><body><h1>dirty_equals/_dict.py</h1>Killed 69 out of 78 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 461</h3><pre>--- dirty_equals/_dict.py
++++ dirty_equals/_dict.py
+@@ -16,7 +16,6 @@
+     with `.settings(...)` to powerful things.
+     """
+ 
+-    @overload
+     def __init__(self, expected: dict[Any, Any]): ...
+ 
+     @overload
+</pre><h3>Mutant 462</h3><pre>--- dirty_equals/_dict.py
++++ dirty_equals/_dict.py
+@@ -19,7 +19,6 @@
+     @overload
+     def __init__(self, expected: dict[Any, Any]): ...
+ 
+-    @overload
+     def __init__(self, **expected: Any): ...
+ 
+     def __init__(self, *expected_args: dict[Any, Any], **expected_kwargs: Any):
+</pre><h3>Mutant 469</h3><pre>--- dirty_equals/_dict.py
++++ dirty_equals/_dict.py
+@@ -40,7 +40,7 @@
+ 
+         self.strict = False
+         self.partial = False
+-        self.ignore: None | Container[Any] | Callable[[Any], bool] = None
++        self.ignore: None & Container[Any] | Callable[[Any], bool] = None
+         self._post_init()
+         super().__init__()
+ 
+</pre><h3>Mutant 470</h3><pre>--- dirty_equals/_dict.py
++++ dirty_equals/_dict.py
+@@ -40,7 +40,7 @@
+ 
+         self.strict = False
+         self.partial = False
+-        self.ignore: None | Container[Any] | Callable[[Any], bool] = None
++        self.ignore: None | Container[Any] & Callable[[Any], bool] = None
+         self._post_init()
+         super().__init__()
+ 
+</pre><h3>Mutant 481</h3><pre>--- dirty_equals/_dict.py
++++ dirty_equals/_dict.py
+@@ -95,7 +95,7 @@
+             new_cls.ignore = ignore
+ 
+         if new_cls.partial and new_cls.ignore:
+-            raise TypeError('partial and ignore cannot be used together')
++            raise TypeError('XXpartial and ignore cannot be used togetherXX')
+ 
+         return new_cls
+ 
+</pre><h3>Mutant 505</h3><pre>--- dirty_equals/_dict.py
++++ dirty_equals/_dict.py
+@@ -139,7 +139,7 @@
+         name = self.__class__.__name__
+         modifiers = []
+         if self.partial != (name == 'IsPartialDict'):
+-            modifiers += [f'partial={self.partial}']
++            modifiers = [f'partial={self.partial}']
+         if (self.ignore == {None}) != (name == 'IsIgnoreDict') or self.ignore not in (None, {None}):
+             r = self.ignore.__name__ if callable(self.ignore) else repr(self.ignore)
+             modifiers += [f'ignore={r}']
+</pre><h3>Mutant 515</h3><pre>--- dirty_equals/_dict.py
++++ dirty_equals/_dict.py
+@@ -142,7 +142,7 @@
+             modifiers += [f'partial={self.partial}']
+         if (self.ignore == {None}) != (name == 'IsIgnoreDict') or self.ignore not in (None, {None}):
+             r = self.ignore.__name__ if callable(self.ignore) else repr(self.ignore)
+-            modifiers += [f'ignore={r}']
++            modifiers = [f'ignore={r}']
+         if self.strict != (name == 'IsStrictDict'):
+             modifiers += [f'strict={self.strict}']
+ 
+</pre><h3>Mutant 521</h3><pre>--- dirty_equals/_dict.py
++++ dirty_equals/_dict.py
+@@ -144,7 +144,7 @@
+             r = self.ignore.__name__ if callable(self.ignore) else repr(self.ignore)
+             modifiers += [f'ignore={r}']
+         if self.strict != (name == 'IsStrictDict'):
+-            modifiers += [f'strict={self.strict}']
++            modifiers = [f'strict={self.strict}']
+ 
+         if modifiers:
+             mod = f'[{", ".join(modifiers)}]'
+</pre><h3>Mutant 524</h3><pre>--- dirty_equals/_dict.py
++++ dirty_equals/_dict.py
+@@ -147,7 +147,7 @@
+             modifiers += [f'strict={self.strict}']
+ 
+         if modifiers:
+-            mod = f'[{", ".join(modifiers)}]'
++            mod = f'[{"XX, XX".join(modifiers)}]'
+         else:
+             mod = ''
+ 
+</pre></body></html>

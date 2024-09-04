@@ -1,0 +1,221 @@
+<html><body><h1>dirty_equals/_datetime.py</h1>Killed 48 out of 68 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 538</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -15,7 +15,7 @@
+     Check if the value is a datetime, and matches the given conditions.
+     """
+ 
+-    allowed_types = datetime
++    allowed_types = None
+ 
+     def __init__(
+         self,
+</pre><h3>Mutant 556</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -92,7 +92,7 @@
+             if self.unix_number:
+                 dt = datetime.fromtimestamp(other)
+             else:
+-                raise TypeError('numbers not allowed')
++                raise TypeError('XXnumbers not allowedXX')
+         elif isinstance(other, str):
+             if self.iso_string:
+                 dt = datetime.fromisoformat(other)
+</pre><h3>Mutant 559</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -99,7 +99,7 @@
+             elif self.format_string:
+                 dt = datetime.strptime(other, self.format_string)
+             else:
+-                raise ValueError('not a valid datetime string')
++                raise ValueError('XXnot a valid datetime stringXX')
+         else:
+             raise ValueError(f'{type(other)} not valid as datetime')
+ 
+</pre><h3>Mutant 560</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -101,7 +101,7 @@
+             else:
+                 raise ValueError('not a valid datetime string')
+         else:
+-            raise ValueError(f'{type(other)} not valid as datetime')
++            raise ValueError(f'XX{type(other)} not valid as datetimeXX')
+ 
+         if self.approx is not None and not self.enforce_tz and self.approx.tzinfo is None and dt.tzinfo is not None:
+             dt = dt.replace(tzinfo=None)
+</pre><h3>Mutant 575</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -133,7 +133,7 @@
+         try:
+             import pytz
+         except ImportError as e:
+-            raise ImportError('`pytz` or `zoneinfo` required for tz handling') from e
++            raise ImportError('XX`pytz` or `zoneinfo` required for tz handlingXX') from e
+         else:
+             return pytz.timezone(tz)  # type: ignore[return-value]
+     else:
+</pre><h3>Mutant 576</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -149,7 +149,7 @@
+     def __init__(
+         self,
+         *,
+-        delta: timedelta | int | float = 2,
++        delta: timedelta | int | float = 3,
+         unix_number: bool = False,
+         iso_string: bool = False,
+         format_string: str | None = None,
+</pre><h3>Mutant 579</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -153,7 +153,7 @@
+         unix_number: bool = False,
+         iso_string: bool = False,
+         format_string: str | None = None,
+-        enforce_tz: bool = True,
++        enforce_tz: bool = False,
+         tz: str | tzinfo | None = None,
+     ):
+         """
+</pre><h3>Mutant 582</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -189,7 +189,7 @@
+ 
+         self.tz = tz
+ 
+-        approx = self._get_now()
++        approx = None
+ 
+         super().__init__(
+             approx=approx,
+</pre><h3>Mutant 583</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -199,7 +199,7 @@
+             format_string=format_string,
+             enforce_tz=enforce_tz,
+         )
+-        if tz is not None:
++        if tz is  None:
+             self._repr_kwargs['tz'] = tz
+ 
+     def _get_now(self) -> datetime:
+</pre><h3>Mutant 584</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -200,7 +200,7 @@
+             enforce_tz=enforce_tz,
+         )
+         if tz is not None:
+-            self._repr_kwargs['tz'] = tz
++            self._repr_kwargs['XXtzXX'] = tz
+ 
+     def _get_now(self) -> datetime:
+         if self.tz is None:
+</pre><h3>Mutant 585</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -200,7 +200,7 @@
+             enforce_tz=enforce_tz,
+         )
+         if tz is not None:
+-            self._repr_kwargs['tz'] = tz
++            self._repr_kwargs['tz'] = None
+ 
+     def _get_now(self) -> datetime:
+         if self.tz is None:
+</pre><h3>Mutant 589</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -222,7 +222,7 @@
+     Check if the value is a date, and matches the given conditions.
+     """
+ 
+-    allowed_types = date
++    allowed_types = None
+ 
+     def __init__(
+         self,
+</pre><h3>Mutant 591</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -264,7 +264,7 @@
+         ```
+         """
+ 
+-        if delta is None:
++        if delta is not None:
+             delta = timedelta()
+         elif isinstance(delta, (int, float)):
+             delta = timedelta(seconds=delta)
+</pre><h3>Mutant 592</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -265,7 +265,7 @@
+         """
+ 
+         if delta is None:
+-            delta = timedelta()
++            delta = None
+         elif isinstance(delta, (int, float)):
+             delta = timedelta(seconds=delta)
+ 
+</pre><h3>Mutant 593</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -267,7 +267,7 @@
+         if delta is None:
+             delta = timedelta()
+         elif isinstance(delta, (int, float)):
+-            delta = timedelta(seconds=delta)
++            delta = None
+ 
+         super().__init__(approx=approx, gt=gt, lt=lt, ge=ge, le=le, delta=delta)  # type: ignore[arg-type]
+ 
+</pre><h3>Mutant 596</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -274,7 +274,7 @@
+         self.iso_string = iso_string
+         self.format_string = format_string
+         self._repr_kwargs.update(
+-            iso_string=Omit if iso_string is False else iso_string,
++            iso_string=Omit if iso_string is not False else iso_string,
+             format_string=Omit if format_string is None else format_string,
+         )
+ 
+</pre><h3>Mutant 597</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -274,7 +274,7 @@
+         self.iso_string = iso_string
+         self.format_string = format_string
+         self._repr_kwargs.update(
+-            iso_string=Omit if iso_string is False else iso_string,
++            iso_string=Omit if iso_string is True else iso_string,
+             format_string=Omit if format_string is None else format_string,
+         )
+ 
+</pre><h3>Mutant 598</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -275,7 +275,7 @@
+         self.format_string = format_string
+         self._repr_kwargs.update(
+             iso_string=Omit if iso_string is False else iso_string,
+-            format_string=Omit if format_string is None else format_string,
++            format_string=Omit if format_string is not None else format_string,
+         )
+ 
+     def prepare(self, other: Any) -> date:
+</pre><h3>Mutant 603</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -287,7 +287,7 @@
+             elif self.format_string:
+                 dt = datetime.strptime(other, self.format_string).date()
+             else:
+-                raise ValueError('not a valid date string')
++                raise ValueError('XXnot a valid date stringXX')
+         else:
+             raise ValueError(f'{type(other)} not valid as date')
+ 
+</pre><h3>Mutant 604</h3><pre>--- dirty_equals/_datetime.py
++++ dirty_equals/_datetime.py
+@@ -289,7 +289,7 @@
+             else:
+                 raise ValueError('not a valid date string')
+         else:
+-            raise ValueError(f'{type(other)} not valid as date')
++            raise ValueError(f'XX{type(other)} not valid as dateXX')
+ 
+         return dt
+ 
+</pre></body></html>

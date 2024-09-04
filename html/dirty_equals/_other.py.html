@@ -1,0 +1,318 @@
+<html><body><h1>dirty_equals/_other.py</h1>Killed 117 out of 146 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 26</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -58,7 +58,7 @@
+             return True
+ 
+ 
+-AnyJson = object
++AnyJson = None
+ JsonType = TypeVar('JsonType', AnyJson, Any)
+ 
+ 
+</pre><h3>Mutant 27</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -59,7 +59,7 @@
+ 
+ 
+ AnyJson = object
+-JsonType = TypeVar('JsonType', AnyJson, Any)
++JsonType = TypeVar('XXJsonTypeXX', AnyJson, Any)
+ 
+ 
+ class IsJson(DirtyEquals[JsonType]):
+</pre><h3>Mutant 28</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -59,7 +59,7 @@
+ 
+ 
+ AnyJson = object
+-JsonType = TypeVar('JsonType', AnyJson, Any)
++JsonType = None
+ 
+ 
+ class IsJson(DirtyEquals[JsonType]):
+</pre><h3>Mutant 29</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -67,7 +67,6 @@
+     A class that checks if a value is a JSON object, and check the contents of the JSON.
+     """
+ 
+-    @overload
+     def __init__(self, expected_value: JsonType = AnyJson): ...
+ 
+     @overload
+</pre><h3>Mutant 30</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -70,7 +70,6 @@
+     @overload
+     def __init__(self, expected_value: JsonType = AnyJson): ...
+ 
+-    @overload
+     def __init__(self, **expected_kwargs: Any): ...
+ 
+     def __init__(self, expected_value: JsonType = AnyJson, **expected_kwargs: Any):
+</pre><h3>Mutant 32</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -105,7 +105,7 @@
+         """
+         if expected_kwargs:
+             if expected_value is not AnyJson:
+-                raise TypeError('IsJson requires either an argument or kwargs, not both')
++                raise TypeError('XXIsJson requires either an argument or kwargs, not bothXX')
+             self.expected_value: Any = expected_kwargs
+         else:
+             self.expected_value = expected_value
+</pre><h3>Mutant 43</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -152,7 +152,7 @@
+         return self.func(other)
+ 
+ 
+-T = TypeVar('T')
++T = TypeVar('XXTXX')
+ 
+ 
+ @lru_cache
+</pre><h3>Mutant 44</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -152,7 +152,7 @@
+         return self.func(other)
+ 
+ 
+-T = TypeVar('T')
++T = None
+ 
+ 
+ @lru_cache
+</pre><h3>Mutant 45</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -154,8 +154,6 @@
+ 
+ T = TypeVar('T')
+ 
+-
+-@lru_cache
+ def _build_type_adapter(ta: type[TypeAdapter[T]], schema: T) -> TypeAdapter[T]:
+     return ta(schema)
+ 
+</pre><h3>Mutant 47</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -162,7 +162,7 @@
+ 
+ _allowed_url_attribute_checks: set[str] = {
+     'scheme',
+-    'host',
++    'XXhostXX',
+     'host_type',
+     'user',
+     'password',
+</pre><h3>Mutant 48</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -163,7 +163,7 @@
+ _allowed_url_attribute_checks: set[str] = {
+     'scheme',
+     'host',
+-    'host_type',
++    'XXhost_typeXX',
+     'user',
+     'password',
+     'port',
+</pre><h3>Mutant 49</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -164,7 +164,7 @@
+     'scheme',
+     'host',
+     'host_type',
+-    'user',
++    'XXuserXX',
+     'password',
+     'port',
+     'path',
+</pre><h3>Mutant 50</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -165,7 +165,7 @@
+     'host',
+     'host_type',
+     'user',
+-    'password',
++    'XXpasswordXX',
+     'port',
+     'path',
+     'query',
+</pre><h3>Mutant 51</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -166,7 +166,7 @@
+     'host_type',
+     'user',
+     'password',
+-    'port',
++    'XXportXX',
+     'path',
+     'query',
+     'fragment',
+</pre><h3>Mutant 52</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -167,7 +167,7 @@
+     'user',
+     'password',
+     'port',
+-    'path',
++    'XXpathXX',
+     'query',
+     'fragment',
+ }
+</pre><h3>Mutant 53</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -168,7 +168,7 @@
+     'password',
+     'port',
+     'path',
+-    'query',
++    'XXqueryXX',
+     'fragment',
+ }
+ 
+</pre><h3>Mutant 54</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -169,7 +169,7 @@
+     'port',
+     'path',
+     'query',
+-    'fragment',
++    'XXfragmentXX',
+ }
+ 
+ 
+</pre><h3>Mutant 63</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -224,7 +224,7 @@
+                 ValidationError,
+             )
+ 
+-            self.ValidationError = ValidationError
++            self.ValidationError = None
+         except ImportError as e:  # pragma: no cover
+             raise ImportError('Pydantic V2 is not installed, run `pip install dirty-equals[pydantic]`') from e
+         url_type_mappings = {
+</pre><h3>Mutant 64</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -226,7 +226,7 @@
+ 
+             self.ValidationError = ValidationError
+         except ImportError as e:  # pragma: no cover
+-            raise ImportError('Pydantic V2 is not installed, run `pip install dirty-equals[pydantic]`') from e
++            raise ImportError('XXPydantic V2 is not installed, run `pip install dirty-equals[pydantic]`XX') from e
+         url_type_mappings = {
+             AnyUrl: any_url,
+             AnyHttpUrl: any_http_url,
+</pre><h3>Mutant 73</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -242,7 +242,7 @@
+         elif url_types_sum == 1:
+             url_type = max(url_type_mappings, key=url_type_mappings.get)  # type: ignore[arg-type]
+         else:
+-            raise ValueError('You can only check against one Pydantic url type at a time')
++            raise ValueError('XXYou can only check against one Pydantic url type at a timeXX')
+ 
+         self.type_adapter = _build_type_adapter(TypeAdapter, url_type)
+ 
+</pre><h3>Mutant 80</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -259,7 +259,7 @@
+         try:
+             other_url = self.type_adapter.validate_python(other)
+         except self.ValidationError:
+-            raise ValueError('Invalid URL')
++            raise ValueError('XXInvalid URLXX')
+ 
+         # we now check that str() of the parsed URL equals its original value
+         # so that invalid encodings fail
+</pre><h3>Mutant 83</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -265,7 +265,7 @@
+         # so that invalid encodings fail
+         # we remove trailing slashes since they're added by pydantic's URL parsing, but don't mean `other` is invalid
+         other_url_str = str(other_url)
+-        if not other.endswith('/') and other_url_str.endswith('/'):
++        if not other.endswith('XX/XX') and other_url_str.endswith('/'):
+             other_url_str = other_url_str[:-1]
+         equal = other_url_str == other
+ 
+</pre><h3>Mutant 101</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -307,7 +307,7 @@
+ 
+         allowed_hashes = HashTypes.__args__  # type: ignore[attr-defined]
+         if hash_type not in allowed_hashes:
+-            raise ValueError(f"Hash type must be one of the following values: {', '.join(allowed_hashes)}")
++            raise ValueError(f"XXHash type must be one of the following values: {', '.join(allowed_hashes)}XX")
+ 
+         self.hash_type = hash_type
+         super().__init__(hash_type)
+</pre><h3>Mutant 113</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -327,7 +327,7 @@
+         return bool(re.fullmatch(hash_type_regex_patterns[self.hash_type], s))
+ 
+ 
+-IP = TypeVar('IP', IPv4Address, IPv4Network, IPv6Address, IPv6Network, Union[str, int, bytes])
++IP = TypeVar('XXIPXX', IPv4Address, IPv4Network, IPv6Address, IPv6Network, Union[str, int, bytes])
+ 
+ 
+ class IsIP(DirtyEquals[IP]):
+</pre><h3>Mutant 114</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -327,7 +327,7 @@
+         return bool(re.fullmatch(hash_type_regex_patterns[self.hash_type], s))
+ 
+ 
+-IP = TypeVar('IP', IPv4Address, IPv4Network, IPv6Address, IPv6Network, Union[str, int, bytes])
++IP = None
+ 
+ 
+ class IsIP(DirtyEquals[IP]):
+</pre><h3>Mutant 118</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -360,7 +360,7 @@
+         """
+         self.version = version
+         if netmask and not self.version:
+-            raise TypeError('To check the netmask you must specify the IP version')
++            raise TypeError('XXTo check the netmask you must specify the IP versionXX')
+         self.netmask = netmask
+         super().__init__(version=version or Omit, netmask=netmask or Omit)
+ 
+</pre><h3>Mutant 122</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -366,7 +366,7 @@
+ 
+     def equals(self, other: Any) -> bool:
+         if isinstance(other, (IPv4Network, IPv6Network)):
+-            ip = other
++            ip = None
+         elif isinstance(other, (str, bytes, int, IPv4Address, IPv6Address)):
+             ip = ip_network(other, strict=False)
+         else:
+</pre><h3>Mutant 139</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -448,7 +448,7 @@
+         Args:
+             fields: key-value pairs of field-value to check for.
+         """
+-        self.strict = False
++        self.strict = None
+         self.partial = False
+         self._post_init()
+         super().__init__(**fields)
+</pre><h3>Mutant 141</h3><pre>--- dirty_equals/_other.py
++++ dirty_equals/_other.py
+@@ -449,7 +449,7 @@
+             fields: key-value pairs of field-value to check for.
+         """
+         self.strict = False
+-        self.partial = False
++        self.partial = None
+         self._post_init()
+         super().__init__(**fields)
+ 
+</pre></body></html>

@@ -1,0 +1,331 @@
+<html><body><h1>dirty_equals/_numeric.py</h1>Killed 83 out of 113 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 347</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -23,7 +23,7 @@
+ 
+ from ._utils import Omit
+ 
+-AnyNumber = Union[int, float, Decimal]
++AnyNumber = None
+ N = TypeVar('N', int, float, Decimal, date, datetime, AnyNumber)
+ 
+ 
+</pre><h3>Mutant 348</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -24,7 +24,7 @@
+ from ._utils import Omit
+ 
+ AnyNumber = Union[int, float, Decimal]
+-N = TypeVar('N', int, float, Decimal, date, datetime, AnyNumber)
++N = TypeVar('XXNXX', int, float, Decimal, date, datetime, AnyNumber)
+ 
+ 
+ class IsNumeric(DirtyEquals[N]):
+</pre><h3>Mutant 350</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -35,7 +35,7 @@
+     This class can be used directly or via any of its subclasses.
+     """
+ 
+-    allowed_types: Union[Type[N], Tuple[type, ...]] = (int, float, Decimal, date, datetime)
++    allowed_types: Union[Type[N], Tuple[type, ...]] = None
+     """It allows any of the types supported in its subclasses."""
+ 
+     def __init__(
+</pre><h3>Mutant 355</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -80,7 +80,7 @@
+         """
+         self.exactly: Optional[N] = exactly
+         if self.exactly is not None and (gt, lt, ge, le) != (None, None, None, None):
+-            raise TypeError('"exactly" cannot be combined with "gt", "lt", "ge", or "le"')
++            raise TypeError('XX"exactly" cannot be combined with "gt", "lt", "ge", or "le"XX')
+         if self.exactly is not None and approx is not None:
+             raise TypeError('"exactly" cannot be combined with "approx"')
+         self.approx: Optional[N] = approx
+</pre><h3>Mutant 359</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -82,7 +82,7 @@
+         if self.exactly is not None and (gt, lt, ge, le) != (None, None, None, None):
+             raise TypeError('"exactly" cannot be combined with "gt", "lt", "ge", or "le"')
+         if self.exactly is not None and approx is not None:
+-            raise TypeError('"exactly" cannot be combined with "approx"')
++            raise TypeError('XX"exactly" cannot be combined with "approx"XX')
+         self.approx: Optional[N] = approx
+         if self.approx is not None and (gt, lt, ge, le) != (None, None, None, None):
+             raise TypeError('"approx" cannot be combined with "gt", "lt", "ge", or "le"')
+</pre><h3>Mutant 364</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -85,7 +85,7 @@
+             raise TypeError('"exactly" cannot be combined with "approx"')
+         self.approx: Optional[N] = approx
+         if self.approx is not None and (gt, lt, ge, le) != (None, None, None, None):
+-            raise TypeError('"approx" cannot be combined with "gt", "lt", "ge", or "le"')
++            raise TypeError('XX"approx" cannot be combined with "gt", "lt", "ge", or "le"XX')
+         self.delta: Optional[N] = delta
+         self.gt: Optional[N] = gt
+         self.lt: Optional[N] = lt
+</pre><h3>Mutant 371</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -91,7 +91,7 @@
+         self.lt: Optional[N] = lt
+         self.ge: Optional[N] = ge
+         self.le: Optional[N] = le
+-        self.has_bounds_checks = not all(f is None for f in (exactly, approx, delta, gt, lt, ge, le))
++        self.has_bounds_checks = not all(f is not None for f in (exactly, approx, delta, gt, lt, ge, le))
+         kwargs = {
+             'exactly': Omit if exactly is None else exactly,
+             'approx': Omit if approx is None else approx,
+</pre><h3>Mutant 373</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -93,7 +93,7 @@
+         self.le: Optional[N] = le
+         self.has_bounds_checks = not all(f is None for f in (exactly, approx, delta, gt, lt, ge, le))
+         kwargs = {
+-            'exactly': Omit if exactly is None else exactly,
++            'XXexactlyXX': Omit if exactly is None else exactly,
+             'approx': Omit if approx is None else approx,
+             'delta': Omit if delta is None else delta,
+             'gt': Omit if gt is None else gt,
+</pre><h3>Mutant 377</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -95,7 +95,7 @@
+         kwargs = {
+             'exactly': Omit if exactly is None else exactly,
+             'approx': Omit if approx is None else approx,
+-            'delta': Omit if delta is None else delta,
++            'XXdeltaXX': Omit if delta is None else delta,
+             'gt': Omit if gt is None else gt,
+             'lt': Omit if lt is None else lt,
+             'ge': Omit if ge is None else ge,
+</pre><h3>Mutant 379</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -96,7 +96,7 @@
+             'exactly': Omit if exactly is None else exactly,
+             'approx': Omit if approx is None else approx,
+             'delta': Omit if delta is None else delta,
+-            'gt': Omit if gt is None else gt,
++            'XXgtXX': Omit if gt is None else gt,
+             'lt': Omit if lt is None else lt,
+             'ge': Omit if ge is None else ge,
+             'le': Omit if le is None else le,
+</pre><h3>Mutant 383</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -98,7 +98,7 @@
+             'delta': Omit if delta is None else delta,
+             'gt': Omit if gt is None else gt,
+             'lt': Omit if lt is None else lt,
+-            'ge': Omit if ge is None else ge,
++            'XXgeXX': Omit if ge is None else ge,
+             'le': Omit if le is None else le,
+         }
+         super().__init__(**kwargs)
+</pre><h3>Mutant 385</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -99,7 +99,7 @@
+             'gt': Omit if gt is None else gt,
+             'lt': Omit if lt is None else lt,
+             'ge': Omit if ge is None else ge,
+-            'le': Omit if le is None else le,
++            'XXleXX': Omit if le is None else le,
+         }
+         super().__init__(**kwargs)
+ 
+</pre><h3>Mutant 393</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -105,7 +105,7 @@
+ 
+     def prepare(self, other: Any) -> N:
+         if other is True or other is False:
+-            raise TypeError('booleans are not numbers')
++            raise TypeError('XXbooleans are not numbersXX')
+         elif not isinstance(other, self.allowed_types):
+             raise TypeError(f'not a {self.allowed_types}')
+         else:
+</pre><h3>Mutant 395</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -107,7 +107,7 @@
+         if other is True or other is False:
+             raise TypeError('booleans are not numbers')
+         elif not isinstance(other, self.allowed_types):
+-            raise TypeError(f'not a {self.allowed_types}')
++            raise TypeError(f'XXnot a {self.allowed_types}XX')
+         else:
+             return other
+ 
+</pre><h3>Mutant 402</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -125,7 +125,7 @@
+         elif self.approx is not None:
+             if self.delta is None:
+                 if isinstance(other, date):
+-                    delta: Any = timedelta(seconds=2)
++                    delta: Any = timedelta(seconds=3)
+                 else:
+                     delta = abs(other / 100)
+             else:
+</pre><h3>Mutant 404</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -127,7 +127,7 @@
+                 if isinstance(other, date):
+                     delta: Any = timedelta(seconds=2)
+                 else:
+-                    delta = abs(other / 100)
++                    delta = abs(other * 100)
+             else:
+                 delta = self.delta
+             return self.approx_equals(other, delta)
+</pre><h3>Mutant 432</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -159,7 +159,7 @@
+     """
+ 
+ 
+-Num = TypeVar('Num', int, float, Decimal)
++Num = TypeVar('XXNumXX', int, float, Decimal)
+ 
+ 
+ class IsApprox(IsNumber):
+</pre><h3>Mutant 433</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -159,7 +159,7 @@
+     """
+ 
+ 
+-Num = TypeVar('Num', int, float, Decimal)
++Num = None
+ 
+ 
+ class IsApprox(IsNumber):
+</pre><h3>Mutant 436</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -227,7 +227,7 @@
+     """
+ 
+     def __init__(self) -> None:
+-        super().__init__(lt=0)
++        super().__init__(lt=1)
+         self._repr_kwargs = {}
+ 
+ 
+</pre><h3>Mutant 437</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -228,7 +228,7 @@
+ 
+     def __init__(self) -> None:
+         super().__init__(lt=0)
+-        self._repr_kwargs = {}
++        self._repr_kwargs = None
+ 
+ 
+ class IsNonNegative(IsNumber):
+</pre><h3>Mutant 439</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -252,7 +252,7 @@
+ 
+     def __init__(self) -> None:
+         super().__init__(ge=0)
+-        self._repr_kwargs = {}
++        self._repr_kwargs = None
+ 
+ 
+ class IsNonPositive(IsNumber):
+</pre><h3>Mutant 441</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -277,7 +277,7 @@
+ 
+     def __init__(self) -> None:
+         super().__init__(le=0)
+-        self._repr_kwargs = {}
++        self._repr_kwargs = None
+ 
+ 
+ class IsInt(IsNumeric[int]):
+</pre><h3>Mutant 444</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -325,7 +325,7 @@
+ 
+     def __init__(self) -> None:
+         super().__init__(gt=0)
+-        self._repr_kwargs = {}
++        self._repr_kwargs = None
+ 
+ 
+ class IsNegativeInt(IsInt):
+</pre><h3>Mutant 446</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -347,7 +347,7 @@
+ 
+     def __init__(self) -> None:
+         super().__init__(lt=0)
+-        self._repr_kwargs = {}
++        self._repr_kwargs = None
+ 
+ 
+ class IsFloat(IsNumeric[float]):
+</pre><h3>Mutant 449</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -391,7 +391,7 @@
+ 
+     def __init__(self) -> None:
+         super().__init__(gt=0)
+-        self._repr_kwargs = {}
++        self._repr_kwargs = None
+ 
+ 
+ class IsNegativeFloat(IsFloat):
+</pre><h3>Mutant 451</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -413,7 +413,7 @@
+ 
+     def __init__(self) -> None:
+         super().__init__(lt=0)
+-        self._repr_kwargs = {}
++        self._repr_kwargs = None
+ 
+ 
+ class IsFloatInf(IsFloat):
+</pre><h3>Mutant 453</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -453,7 +453,7 @@
+     """
+ 
+     def __init__(self) -> None:
+-        super().__init__(gt=0)
++        super().__init__(gt=1)
+         self._repr_kwargs = {}
+ 
+     def equals(self, other: Any) -> bool:
+</pre><h3>Mutant 454</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -454,7 +454,7 @@
+ 
+     def __init__(self) -> None:
+         super().__init__(gt=0)
+-        self._repr_kwargs = {}
++        self._repr_kwargs = None
+ 
+     def equals(self, other: Any) -> bool:
+         return self.bounds_checks(other) and super().equals(other)
+</pre><h3>Mutant 456</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -477,7 +477,7 @@
+     """
+ 
+     def __init__(self) -> None:
+-        super().__init__(lt=0)
++        super().__init__(lt=1)
+         self._repr_kwargs = {}
+ 
+     def equals(self, other: Any) -> bool:
+</pre><h3>Mutant 457</h3><pre>--- dirty_equals/_numeric.py
++++ dirty_equals/_numeric.py
+@@ -478,7 +478,7 @@
+ 
+     def __init__(self) -> None:
+         super().__init__(lt=0)
+-        self._repr_kwargs = {}
++        self._repr_kwargs = None
+ 
+     def equals(self, other: Any) -> bool:
+         return self.bounds_checks(other) and super().equals(other)
+</pre></body></html>

@@ -1,0 +1,98 @@
+<html><body><h1>dirty_equals/_inspection.py</h1>Killed 32 out of 41 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 306</h3><pre>--- dirty_equals/_inspection.py
++++ dirty_equals/_inspection.py
+@@ -4,7 +4,7 @@
+ from ._strings import IsStr
+ from ._utils import get_dict_arg
+ 
+-ExpectedType = TypeVar('ExpectedType', bound=Union[type, Tuple[Union[type, Tuple[Any, ...]], ...]])
++ExpectedType = TypeVar('XXExpectedTypeXX', bound=Union[type, Tuple[Union[type, Tuple[Any, ...]], ...]])
+ 
+ 
+ class IsInstance(DirtyEquals[ExpectedType]):
+</pre><h3>Mutant 307</h3><pre>--- dirty_equals/_inspection.py
++++ dirty_equals/_inspection.py
+@@ -4,7 +4,7 @@
+ from ._strings import IsStr
+ from ._utils import get_dict_arg
+ 
+-ExpectedType = TypeVar('ExpectedType', bound=Union[type, Tuple[Union[type, Tuple[Any, ...]], ...]])
++ExpectedType = None
+ 
+ 
+ class IsInstance(DirtyEquals[ExpectedType]):
+</pre><h3>Mutant 312</h3><pre>--- dirty_equals/_inspection.py
++++ dirty_equals/_inspection.py
+@@ -57,7 +57,7 @@
+             return isinstance(other, self.expected_type)
+ 
+ 
+-T = TypeVar('T')
++T = TypeVar('XXTXX')
+ 
+ 
+ class HasName(DirtyEquals[T]):
+</pre><h3>Mutant 313</h3><pre>--- dirty_equals/_inspection.py
++++ dirty_equals/_inspection.py
+@@ -57,7 +57,7 @@
+             return isinstance(other, self.expected_type)
+ 
+ 
+-T = TypeVar('T')
++T = None
+ 
+ 
+ class HasName(DirtyEquals[T]):
+</pre><h3>Mutant 318</h3><pre>--- dirty_equals/_inspection.py
++++ dirty_equals/_inspection.py
+@@ -93,7 +93,7 @@
+         self.allow_instances = allow_instances
+         kwargs = {}
+         if allow_instances:
+-            kwargs['allow_instances'] = allow_instances
++            kwargs['XXallow_instancesXX'] = allow_instances
+         super().__init__(expected_name, allow_instances=allow_instances)
+ 
+     def __class_getitem__(cls, expected_name: str) -> 'HasName[T]':
+</pre><h3>Mutant 319</h3><pre>--- dirty_equals/_inspection.py
++++ dirty_equals/_inspection.py
+@@ -93,7 +93,7 @@
+         self.allow_instances = allow_instances
+         kwargs = {}
+         if allow_instances:
+-            kwargs['allow_instances'] = allow_instances
++            kwargs['allow_instances'] = None
+         super().__init__(expected_name, allow_instances=allow_instances)
+ 
+     def __class_getitem__(cls, expected_name: str) -> 'HasName[T]':
+</pre><h3>Mutant 338</h3><pre>--- dirty_equals/_inspection.py
++++ dirty_equals/_inspection.py
+@@ -156,7 +156,6 @@
+     This is a partial check - e.g. the attributes provided to check do not need to be exhaustive.
+     """
+ 
+-    @overload
+     def __init__(self, expected: Dict[Any, Any]): ...
+ 
+     @overload
+</pre><h3>Mutant 339</h3><pre>--- dirty_equals/_inspection.py
++++ dirty_equals/_inspection.py
+@@ -159,7 +159,6 @@
+     @overload
+     def __init__(self, expected: Dict[Any, Any]): ...
+ 
+-    @overload
+     def __init__(self, **expected: Any): ...
+ 
+     def __init__(self, *expected_args: Dict[Any, Any], **expected_kwargs: Any):
+</pre><h3>Mutant 340</h3><pre>--- dirty_equals/_inspection.py
++++ dirty_equals/_inspection.py
+@@ -186,7 +186,7 @@
+         assert Foo(1, 2) == HasAttributes(a=1, b=2, spam=AnyThing)
+         ```
+         """
+-        self.expected_attrs = get_dict_arg('HasAttributes', expected_args, expected_kwargs)
++        self.expected_attrs = get_dict_arg('XXHasAttributesXX', expected_args, expected_kwargs)
+         super().__init__(**self.expected_attrs)
+ 
+     def equals(self, other: Any) -> bool:
+</pre></body></html>

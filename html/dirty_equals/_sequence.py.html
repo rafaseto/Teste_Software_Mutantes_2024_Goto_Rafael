@@ -1,0 +1,140 @@
+<html><body><h1>dirty_equals/_sequence.py</h1>Killed 60 out of 73 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 162</h3><pre>--- dirty_equals/_sequence.py
++++ dirty_equals/_sequence.py
+@@ -7,7 +7,7 @@
+     from typing import TypeAlias
+ 
+ __all__ = 'HasLen', 'Contains', 'IsListOrTuple', 'IsList', 'IsTuple'
+-T = TypeVar('T', List[Any], Tuple[Any, ...])
++T = TypeVar('XXTXX', List[Any], Tuple[Any, ...])
+ LengthType: 'TypeAlias' = 'Union[None, int, Tuple[int, Union[int, Any]]]'
+ 
+ 
+</pre><h3>Mutant 164</h3><pre>--- dirty_equals/_sequence.py
++++ dirty_equals/_sequence.py
+@@ -8,7 +8,7 @@
+ 
+ __all__ = 'HasLen', 'Contains', 'IsListOrTuple', 'IsList', 'IsTuple'
+ T = TypeVar('T', List[Any], Tuple[Any, ...])
+-LengthType: 'TypeAlias' = 'Union[None, int, Tuple[int, Union[int, Any]]]'
++LengthType: 'XXTypeAliasXX' = 'Union[None, int, Tuple[int, Union[int, Any]]]'
+ 
+ 
+ class HasLen(DirtyEquals[Sized]):
+</pre><h3>Mutant 165</h3><pre>--- dirty_equals/_sequence.py
++++ dirty_equals/_sequence.py
+@@ -8,7 +8,7 @@
+ 
+ __all__ = 'HasLen', 'Contains', 'IsListOrTuple', 'IsList', 'IsTuple'
+ T = TypeVar('T', List[Any], Tuple[Any, ...])
+-LengthType: 'TypeAlias' = 'Union[None, int, Tuple[int, Union[int, Any]]]'
++LengthType: 'TypeAlias' = 'XXUnion[None, int, Tuple[int, Union[int, Any]]]XX'
+ 
+ 
+ class HasLen(DirtyEquals[Sized]):
+</pre><h3>Mutant 166</h3><pre>--- dirty_equals/_sequence.py
++++ dirty_equals/_sequence.py
+@@ -8,7 +8,7 @@
+ 
+ __all__ = 'HasLen', 'Contains', 'IsListOrTuple', 'IsList', 'IsTuple'
+ T = TypeVar('T', List[Any], Tuple[Any, ...])
+-LengthType: 'TypeAlias' = 'Union[None, int, Tuple[int, Union[int, Any]]]'
++LengthType: 'TypeAlias' = None
+ 
+ 
+ class HasLen(DirtyEquals[Sized]):
+</pre><h3>Mutant 167</h3><pre>--- dirty_equals/_sequence.py
++++ dirty_equals/_sequence.py
+@@ -16,7 +16,6 @@
+     Check that some has a given length, or length in a given range.
+     """
+ 
+-    @overload
+     def __init__(self, length: int): ...
+ 
+     @overload
+</pre><h3>Mutant 168</h3><pre>--- dirty_equals/_sequence.py
++++ dirty_equals/_sequence.py
+@@ -19,7 +19,6 @@
+     @overload
+     def __init__(self, length: int): ...
+ 
+-    @overload
+     def __init__(self, min_length: int, max_length: Union[int, Any]): ...
+ 
+     def __init__(self, min_length: int, max_length: Union[None, int, Any] = None):  # type: ignore[misc]
+</pre><h3>Mutant 176</h3><pre>--- dirty_equals/_sequence.py
++++ dirty_equals/_sequence.py
+@@ -89,7 +89,6 @@
+ 
+     allowed_type: Union[Type[T], Tuple[Type[List[Any]], Type[Tuple[Any, ...]]]] = (list, tuple)
+ 
+-    @overload
+     def __init__(self, *items: Any, check_order: bool = True, length: 'LengthType' = None): ...
+ 
+     @overload
+</pre><h3>Mutant 177</h3><pre>--- dirty_equals/_sequence.py
++++ dirty_equals/_sequence.py
+@@ -90,7 +90,7 @@
+     allowed_type: Union[Type[T], Tuple[Type[List[Any]], Type[Tuple[Any, ...]]]] = (list, tuple)
+ 
+     @overload
+-    def __init__(self, *items: Any, check_order: bool = True, length: 'LengthType' = None): ...
++    def __init__(self, *items: Any, check_order: bool = False, length: 'LengthType' = None): ...
+ 
+     @overload
+     def __init__(self, positions: Dict[int, Any], length: 'LengthType' = None): ...
+</pre><h3>Mutant 178</h3><pre>--- dirty_equals/_sequence.py
++++ dirty_equals/_sequence.py
+@@ -92,7 +92,6 @@
+     @overload
+     def __init__(self, *items: Any, check_order: bool = True, length: 'LengthType' = None): ...
+ 
+-    @overload
+     def __init__(self, positions: Dict[int, Any], length: 'LengthType' = None): ...
+ 
+     def __init__(
+</pre><h3>Mutant 182</h3><pre>--- dirty_equals/_sequence.py
++++ dirty_equals/_sequence.py
+@@ -156,7 +156,7 @@
+         if positions is not None:
+             self.positions: Optional[Dict[int, Any]] = positions
+             if items:
+-                raise TypeError(f'{self.__class__.__name__} requires either args or positions, not both')
++                raise TypeError(f'XX{self.__class__.__name__} requires either args or positions, not bothXX')
+             if not check_order:
+                 raise TypeError('check_order=False is not compatible with positions')
+         else:
+</pre><h3>Mutant 184</h3><pre>--- dirty_equals/_sequence.py
++++ dirty_equals/_sequence.py
+@@ -158,7 +158,7 @@
+             if items:
+                 raise TypeError(f'{self.__class__.__name__} requires either args or positions, not both')
+             if not check_order:
+-                raise TypeError('check_order=False is not compatible with positions')
++                raise TypeError('XXcheck_order=False is not compatible with positionsXX')
+         else:
+             self.positions = None
+             self.items = items
+</pre><h3>Mutant 193</h3><pre>--- dirty_equals/_sequence.py
++++ dirty_equals/_sequence.py
+@@ -167,7 +167,7 @@
+         self.length: Any = length
+         if self.length is not None and not isinstance(self.length, int):
+             if self.length == Ellipsis:
+-                self.length = 0, ...
++                self.length = 1, ...
+             else:
+                 self.length = tuple(self.length)
+ 
+</pre><h3>Mutant 219</h3><pre>--- dirty_equals/_sequence.py
++++ dirty_equals/_sequence.py
+@@ -257,7 +257,7 @@
+         return length
+     else:
+         if len(length) != 2:
+-            raise TypeError(f'length must be a tuple of length 2, not {len(length)}')
++            raise TypeError(f'XXlength must be a tuple of length 2, not {len(length)}XX')
+         max_value = length[1] if isinstance(length[1], int) else plain_repr('...')
+         return length[0], max_value
+ 
+</pre></body></html>

@@ -1,0 +1,98 @@
+<html><body><h1>dirty_equals/_strings.py</h1>Killed 54 out of 63 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 606</h3><pre>--- dirty_equals/_strings.py
++++ dirty_equals/_strings.py
+@@ -4,7 +4,7 @@
+ from ._base import DirtyEquals
+ from ._utils import Omit, plain_repr
+ 
+-T = TypeVar('T', str, bytes)
++T = TypeVar('XXTXX', str, bytes)
+ 
+ __all__ = 'IsStr', 'IsBytes', 'IsAnyStr'
+ 
+</pre><h3>Mutant 608</h3><pre>--- dirty_equals/_strings.py
++++ dirty_equals/_strings.py
+@@ -18,7 +18,7 @@
+     `str` or `bytes` respectively.
+     """
+ 
+-    expected_types: Tuple[Type[Any], ...] = (str, bytes)
++    expected_types: Tuple[Type[Any], ...] = None
+ 
+     def __init__(
+         self,
+</pre><h3>Mutant 618</h3><pre>--- dirty_equals/_strings.py
++++ dirty_equals/_strings.py
+@@ -63,7 +63,7 @@
+         self._flex = len(self.expected_types) > 1
+         if regex is None:
+             self.regex: Union[None, T, Pattern[T]] = None
+-            self.regex_flags: int = 0
++            self.regex_flags: int = 1
+         else:
+             self.regex, self.regex_flags = self._prepare_regex(regex, regex_flags)
+         super().__init__(
+</pre><h3>Mutant 619</h3><pre>--- dirty_equals/_strings.py
++++ dirty_equals/_strings.py
+@@ -63,7 +63,7 @@
+         self._flex = len(self.expected_types) > 1
+         if regex is None:
+             self.regex: Union[None, T, Pattern[T]] = None
+-            self.regex_flags: int = 0
++            self.regex_flags: int = None
+         else:
+             self.regex, self.regex_flags = self._prepare_regex(regex, regex_flags)
+         super().__init__(
+</pre><h3>Mutant 661</h3><pre>--- dirty_equals/_strings.py
++++ dirty_equals/_strings.py
+@@ -106,7 +106,7 @@
+                 # less performant, but more flexible
+                 if regex_flags == 0 and regex.flags != re.UNICODE:
+                     regex_flags = regex.flags & ~re.UNICODE
+-                regex = regex.pattern
++                regex = None
+ 
+             elif regex_flags != 0:
+                 regex = regex.pattern
+</pre><h3>Mutant 664</h3><pre>--- dirty_equals/_strings.py
++++ dirty_equals/_strings.py
+@@ -109,7 +109,7 @@
+                 regex = regex.pattern
+ 
+             elif regex_flags != 0:
+-                regex = regex.pattern
++                regex = None
+ 
+         if self._flex and isinstance(regex, str):
+             regex = regex.encode()  # type: ignore[assignment]
+</pre><h3>Mutant 665</h3><pre>--- dirty_equals/_strings.py
++++ dirty_equals/_strings.py
+@@ -111,7 +111,7 @@
+             elif regex_flags != 0:
+                 regex = regex.pattern
+ 
+-        if self._flex and isinstance(regex, str):
++        if self._flex or isinstance(regex, str):
+             regex = regex.encode()  # type: ignore[assignment]
+ 
+         return regex, regex_flags
+</pre><h3>Mutant 666</h3><pre>--- dirty_equals/_strings.py
++++ dirty_equals/_strings.py
+@@ -112,7 +112,7 @@
+                 regex = regex.pattern
+ 
+         if self._flex and isinstance(regex, str):
+-            regex = regex.encode()  # type: ignore[assignment]
++            regex = None  # type: ignore[assignment]
+ 
+         return regex, regex_flags
+ 
+</pre><h3>Mutant 668</h3><pre>--- dirty_equals/_strings.py
++++ dirty_equals/_strings.py
+@@ -156,5 +156,5 @@
+     ```
+     """
+ 
+-    expected_types = (bytes,)
++    expected_types = None
+ 
+</pre></body></html>
