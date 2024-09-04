@@ -27,6 +27,7 @@ new fork”.
 ```
 Figura 1 – Realização do fork para o repositório cal_python
 ```
+![image](https://github.com/user-attachments/assets/26aecb29-5c7e-4c20-8ecd-cdde6834bc80)
 ```
 Fonte: Autor
 ```
