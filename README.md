@@ -51,6 +51,9 @@ AWS Cloud9 como IDE. A figura 3 mostra a clonagem do repositório no AWS Cloud9.
 ```
 Figura 3 – Clonagem do projeto no AWS Cloud
 ```
+
+![image](https://github.com/user-attachments/assets/145fb0b9-505b-4859-898f-aefd5d7a5a23)
+
 ```
 Fonte: Autor
 ```
@@ -72,6 +75,9 @@ A figura 4 mostra o resultado da checagem da versão do Python.
 ```
 Figura 4 – Versão do Python configurada no ambiente do AWS Cloud
 ```
+
+![image](https://github.com/user-attachments/assets/dbae8e55-0fe1-4e4c-a5d1-fcdeb45d6b48)
+
 ```
 Fonte: Autor
 ```
@@ -84,6 +90,9 @@ trabalho já tinha sido definido como “/cal_python” por meio do comando “c
 ```
 Figura 5 – Instruções de instalação e configuração
 ```
+
+![image](https://github.com/user-attachments/assets/2066869f-46df-4c6e-b46a-f1f0accaea26)
+
 ```
 Fonte: Stevão Andrade
 ```
@@ -95,6 +104,9 @@ e mutmut estão devidamente instalados.
 ```
 Figura 6 – Lista de bibliotecas instaladas no ambiente virtual
 ```
+
+![image](https://github.com/user-attachments/assets/833731b9-6cf1-4a82-8296-6f1ab9338bd7)
+
 ```
 Fonte: Autor
 ```
@@ -109,6 +121,9 @@ apresenta os resultados dos testes: dos 21 testes encontrados, 20 passaram e 1 f
 ```
 Figura 7 – Resultados da execução dos casos de teste de test_cal.py
 ```
+
+![image](https://github.com/user-attachments/assets/bfeb9f47-ffd0-42c8-b784-2f2962dfd249)
+
 ```
 Fonte: Autor
 ```
@@ -119,6 +134,9 @@ para o método “test_is_leap”, o parâmetro (1700, True). A figura 8 mostra 
 ```
 Figura 8 – Método de teste test_is_leap e sua lista de parâmetros
 ```
+
+![image](https://github.com/user-attachments/assets/c542d6fe-5f01-4561-afe5-2970455774c1)
+
 ```
 Fonte: Autor
 ```
@@ -132,6 +150,9 @@ ignorado.
 ```
 Figura 9 – Resultados da execução dos casos de teste de test_cal.py após as mudanças
 ```
+
+![image](https://github.com/user-attachments/assets/793b32f9-552d-417c-84e5-549f555eef8d)
+
 ```
 Fonte: Autor
 ```
