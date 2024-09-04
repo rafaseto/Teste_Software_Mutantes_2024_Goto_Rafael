@@ -27,6 +27,7 @@ new fork”.
 ```
 Figura 1 – Realização do fork para o repositório cal_python
 ```
+![image](https://github.com/user-attachments/assets/26aecb29-5c7e-4c20-8ecd-cdde6834bc80)
 ```
 Fonte: Autor
 ```
@@ -38,6 +39,8 @@ Code”.
 ```
 Figura 2 – Obtenção da URL do projeto copiado
 ```
+![image](https://github.com/user-attachments/assets/908d8da5-138f-4c8d-bcd9-2538277f0b20)
+
 ```
 Fonte: Autor
 ```
@@ -48,6 +51,9 @@ AWS Cloud9 como IDE. A figura 3 mostra a clonagem do repositório no AWS Cloud9.
 ```
 Figura 3 – Clonagem do projeto no AWS Cloud
 ```
+
+![image](https://github.com/user-attachments/assets/145fb0b9-505b-4859-898f-aefd5d7a5a23)
+
 ```
 Fonte: Autor
 ```
@@ -69,6 +75,9 @@ A figura 4 mostra o resultado da checagem da versão do Python.
 ```
 Figura 4 – Versão do Python configurada no ambiente do AWS Cloud
 ```
+
+![image](https://github.com/user-attachments/assets/dbae8e55-0fe1-4e4c-a5d1-fcdeb45d6b48)
+
 ```
 Fonte: Autor
 ```
@@ -81,6 +90,9 @@ trabalho já tinha sido definido como “/cal_python” por meio do comando “c
 ```
 Figura 5 – Instruções de instalação e configuração
 ```
+
+![image](https://github.com/user-attachments/assets/2066869f-46df-4c6e-b46a-f1f0accaea26)
+
 ```
 Fonte: Stevão Andrade
 ```
@@ -92,6 +104,9 @@ e mutmut estão devidamente instalados.
 ```
 Figura 6 – Lista de bibliotecas instaladas no ambiente virtual
 ```
+
+![image](https://github.com/user-attachments/assets/833731b9-6cf1-4a82-8296-6f1ab9338bd7)
+
 ```
 Fonte: Autor
 ```
@@ -106,6 +121,9 @@ apresenta os resultados dos testes: dos 21 testes encontrados, 20 passaram e 1 f
 ```
 Figura 7 – Resultados da execução dos casos de teste de test_cal.py
 ```
+
+![image](https://github.com/user-attachments/assets/bfeb9f47-ffd0-42c8-b784-2f2962dfd249)
+
 ```
 Fonte: Autor
 ```
@@ -116,6 +134,9 @@ para o método “test_is_leap”, o parâmetro (1700, True). A figura 8 mostra 
 ```
 Figura 8 – Método de teste test_is_leap e sua lista de parâmetros
 ```
+
+![image](https://github.com/user-attachments/assets/c542d6fe-5f01-4561-afe5-2970455774c1)
+
 ```
 Fonte: Autor
 ```
@@ -129,6 +150,9 @@ ignorado.
 ```
 Figura 9 – Resultados da execução dos casos de teste de test_cal.py após as mudanças
 ```
+
+![image](https://github.com/user-attachments/assets/793b32f9-552d-417c-84e5-549f555eef8d)
+
 ```
 Fonte: Autor
 ```
@@ -140,6 +164,9 @@ código de 55%, isto é, 55% das linhas do arquivo “cal.py” foram cobertas p
 ```
 Figura 10 – Relatório de cobertura de código para o arquivo cal.py
 ```
+
+![image](https://github.com/user-attachments/assets/5fa5920b-8cab-432f-8ea7-165f63e92b08)
+
 ```
 Fonte: Autor
 ```
@@ -156,6 +183,9 @@ existem 48 ramificações (branches), e a cobertura é de 61%.
 ```
 Figura 11 – Relatório de cobertura de código em formato HTML para cal.py
 ```
+
+![image](https://github.com/user-attachments/assets/e153d290-a27f-4890-b1f7-2fc394f36bba)
+
 Fonte: Autor
 Uma visualização mais detalhada da cobertura foi acessada por de um clique no nome
 do arquivo “cal_py”. Dessa maneira, pode-se visualizar linha por linha, em verde o que está
@@ -165,6 +195,9 @@ trecho do relatório neste nível de detalhe.
 ```
 Figura 12 – Relatório de todas as linhas do arquivo “cal.py”
 ```
+
+![image](https://github.com/user-attachments/assets/ec34fa1a-4278-4583-a625-27d078099e31)
+
 ```
 Fonte: Autor
 ```
@@ -180,6 +213,9 @@ sem erros, foi necessário mover o arquivo “test_cal.py” para uma nova subpa
 ```
 Figura 13 – Resultados da execução dos testes de mutação
 ```
+
+![image](https://github.com/user-attachments/assets/0b7e1cd1-c2fc-485d-aa2d-ad4916fd8d82)
+
 Fonte: Autor
 A figura 14 demonstra o resultado obtido com o comando “mutmut results”, do qual
 permite verificar os mutantes que sobreviveram e o único mutante suspeito encontrado.
@@ -188,6 +224,9 @@ permite verificar os mutantes que sobreviveram e o único mutante suspeito encon
 ```
 Figura 14 – Mutantes suspeitos e que sobreviveram
 ```
+
+![image](https://github.com/user-attachments/assets/049d26ca-f41b-45ff-941f-477b1adbc942)
+
 Fonte: Autor
 Por meio do comando “mutmut show <mutante>”, pode-se visualizar os detalhes da
 alteração do mutante passado como argumento. A figura 15 mostra os detalhes do mutante
@@ -196,6 +235,9 @@ alteração do mutante passado como argumento. A figura 15 mostra os detalhes do
 ```
 Figura 15 – Alteração feita no mutante 1 2
 ```
+
+![image](https://github.com/user-attachments/assets/a78970d1-8700-471e-bec4-61efc57a7513)
+
 ```
 Fonte: Autor
 ```
@@ -208,6 +250,9 @@ gerado.
 ```
 Figura 16 – Trecho do arquivo cal.py.html
 ```
+
+![image](https://github.com/user-attachments/assets/9f939198-b6dc-48ba-9b41-89982b37bc0e)
+
 ```
 Fonte: Autor
 ```
@@ -222,6 +267,9 @@ cal.py.html.
 ```
 Figura 17 – Informações acerca do mutante 27
 ```
+
+![image](https://github.com/user-attachments/assets/53f0b2b9-035e-41cd-8180-721d0dbcf6cd)
+
 ```
 Fonte: Autor
 ```
@@ -231,6 +279,9 @@ um ano bissexto e o mês igual a 2, de modo que os casos de teste definidos pass
 o caso do mutante 27. A figura 18 mostra o novo caso de teste (2, 2020) implementado no
 arquivo “test_cal.py”.
 Figura 18 – Novo caso de teste (2, 2020) para “matar” o mutante 27
+
+![image](https://github.com/user-attachments/assets/74919104-c56f-4c2b-b123-b8cbd5d09761)
+
 
 ```
 Fonte: Autor
@@ -243,6 +294,9 @@ adição.
 ```
 Figura 19 – Resultados da execução dos testes de mutação após a adição do caso de teste (2, 2020)
 ```
+
+![image](https://github.com/user-attachments/assets/683f344d-88a0-4b76-aa65-6131d0665c55)
+
 ```
 Fonte: Autor
 ```
@@ -254,6 +308,9 @@ Ao gerar novamente o relatório HTML, nota-se, por meio da figura 20, que o muta
 ```
 Figura 20 – Trecho do arquivo cal.py.html após a adição do caso de teste (2, 2020)
 ```
+
+![image](https://github.com/user-attachments/assets/625a4212-7e4a-4fac-812c-757788a59c9a)
+
 ```
 Fonte: Autor
 ```
@@ -270,6 +327,9 @@ da qual possui os casos de teste.
 ```
 Figura 21 – Repositório GitHub da biblioteca dirty-equals
 ```
+
+![image](https://github.com/user-attachments/assets/3f8f0c7b-1e7f-45df-be9e-0008281d4e68)
+
 ```
 Fonte: Autor
 ```
@@ -281,6 +341,9 @@ de execução de 1.78s.
 ```
 Figura 22 – Resultados da execução dos casos de teste definidos na pasta “tests”
 ```
+
+![image](https://github.com/user-attachments/assets/67f7ba14-5a9d-4480-bdec-c0c64e7c37eb)
+
 ```
 Fonte: Autor
 ```
@@ -291,6 +354,8 @@ cobertura em cada um dos arquivos que estão na pasta “dirty_equals”. Apenas
 datetime.py não atingiu 100% de cobertura, no total o código fonte do projeto possui 99.47%
 de cobertura.
 Figura 23 – Relatório de cobertura de código para a pasta “dirty_equals”
+
+![image](https://github.com/user-attachments/assets/11bb6ea6-4e72-412a-945c-ebc408c6fb8d)
 
 ```
 Fonte: Autor
@@ -308,6 +373,9 @@ foram excluídos da contagem de cobertura manualmente. Ademais existem 300 ramif
 ```
 Figura 24 – Relatório de cobertura de código em formato HTML para “dirty_equals”
 ```
+
+![image](https://github.com/user-attachments/assets/33a882c1-6302-4e25-a77b-e3fb07ca9b79)
+
 ```
 Fonte: Autor
 ```
@@ -321,6 +389,9 @@ o que está coberto pelos testes e em vermelho o que não está coberto pelos te
 ```
 Figura 25 – Relatório de todas as linhas do arquivo “_boolean.py”
 ```
+
+![image](https://github.com/user-attachments/assets/5e147892-586d-4a2a-ad67-bc6faa6a8675)
+
 ```
 Fonte: Autor
 ```
@@ -333,6 +404,9 @@ da execução: 530 mutantes “mortos” e 1 3 8 “sobreviventes”.
 ```
 Figura 26 – Resultados da execução dos testes de mutação nos arquivos de “dirty_equals”
 ```
+
+![image](https://github.com/user-attachments/assets/74663315-2b5e-407f-80d5-d6a757a8c0ce)
+
 ```
 Fonte: Autor
 ```
@@ -343,6 +417,9 @@ do qual permite verificar os mutantes que sobreviveram.
 ```
 Figura 27 – Trecho do resultado dos mutantes “sobreviventes”
 ```
+
+![image](https://github.com/user-attachments/assets/defce7af-aa69-44b4-9a08-c49323522f72)
+
 ```
 Fonte: Autor
 ```
@@ -350,6 +427,8 @@ Com o comando “mutmut show <mutante>”, pode-se visualizar os detalhes da
 alteração do mutante passado como argumento. A figura 28 mostra os detalhes do mutante
 521.
 Figura 28 – Alteração feita no mutante 521
+
+![image](https://github.com/user-attachments/assets/c029bd07-cbcb-4669-b8e0-de501267529a)
 
 ```
 Fonte: Autor
@@ -364,6 +443,9 @@ associados aos arquivos da pasta “dirty_equals”.
 ```
 Figura 29 – Relatório dos testes de mutação (index.html)
 ```
+
+![image](https://github.com/user-attachments/assets/545d4436-64b2-41d9-b59b-1eef107a6677)
+
 ```
 Fonte: Autor
 ```
@@ -375,6 +457,9 @@ arquivo “_numeric.py”, armazenados no arquivo “_numeric.py.html”.
 ```
 Figura 30 – Trecho do arquivo “_numeric.py.html”
 ```
+
+![image](https://github.com/user-attachments/assets/f76fa3c9-5a82-4bf8-a653-e86eca632b54)
+
 ```
 Fonte: Autor
 ```
@@ -392,6 +477,9 @@ testando majoritariamente o dígito 1, como pode-se observar na figura 31.
 ```
 Figura 31 – Trecho do arquivo “test_numeric.py”
 ```
+
+![image](https://github.com/user-attachments/assets/bb2a2578-22ea-4fa6-928e-7c3047e17b0f)
+
 ```
 Fonte: Autor
 ```
@@ -405,6 +493,8 @@ englobavam mudanças relacionadas ao valor “None”, dos 30 sobreviventes asso
 
 Figura 32 – Mutantes associados ao valor “None”
 
+![image](https://github.com/user-attachments/assets/af2cbb75-6e17-41ff-bd32-1c4345463d91)
+
 ```
 Fonte: Autor
 ```
@@ -416,6 +506,9 @@ testa que o valor passado como parâmetro não é igual a um Int, Float, etc.
 ```
 Figura 33 – Trecho modificado em “_test_numeric.py”
 ```
+
+![image](https://github.com/user-attachments/assets/c8f7b6fc-599d-4458-9ad1-3c858030a812)
+
 ```
 Fonte: Autor
 ```
@@ -429,14 +522,19 @@ foram “mortos”.
 ```
 Figura 34 – Resultados da execução 2 dos testes de mutação nos arquivos de “dirty_equals”
 ```
+
+![image](https://github.com/user-attachments/assets/828c0d2c-14ea-4a19-968c-3a3e71094242)
+
 ```
 Fonte: Autor
 ```
 Link para o repositório no GitHub:
+```
 https://github.com/rafaseto/Teste_Software_Mutantes_2024_Goto_Rafael
+```
 
 Link para o vídeo tutorial:
-https://drive.google.com/file/d/1c2VrOFnHKoVNJPQoporD07G2AZu8S-
-CU/view?usp=sharing
-
+```
+https://drive.google.com/file/d/1c2VrOFnHKoVNJPQoporD07G2AZu8S-CU/view?usp=sharing
+```
 
